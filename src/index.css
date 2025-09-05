@@ -8,35 +8,50 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Tech-focused color palette */
+    --background: 210 30% 8%;
+    --foreground: 210 40% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 210 25% 12%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 210 25% 12%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Electric Blue Primary */
+    --primary: 213 94% 68%;
+    --primary-foreground: 210 30% 8%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Neon Purple Secondary */
+    --secondary: 258 90% 66%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Electric Cyan Accent */
+    --accent: 189 94% 57%;
+    --accent-foreground: 210 30% 8%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 25% 16%;
+    --muted-foreground: 210 20% 60%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 210 25% 20%;
+    --input: 210 25% 16%;
+    --ring: 213 94% 68%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    /* Custom Design Tokens */
+    --electric-gradient: linear-gradient(135deg, hsl(213 94% 68%), hsl(258 90% 66%));
+    --hero-gradient: linear-gradient(135deg, hsl(210 30% 8%) 0%, hsl(213 94% 28%) 50%, hsl(258 90% 36%) 100%);
+    --card-gradient: linear-gradient(145deg, hsl(210 25% 12%) 0%, hsl(210 25% 16%) 100%);
+    --neon-glow: 0 0 30px hsl(213 94% 68% / 0.3), 0 0 60px hsl(213 94% 68% / 0.1);
+    --purple-glow: 0 0 30px hsl(258 90% 66% / 0.3), 0 0 60px hsl(258 90% 66% / 0.1);
+    
+    /* Animation Variables */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
 
@@ -101,5 +116,35 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .electric-gradient {
+    background: var(--electric-gradient);
+  }
+  
+  .hero-gradient {
+    background: var(--hero-gradient);
+  }
+  
+  .card-gradient {
+    background: var(--card-gradient);
+  }
+  
+  .neon-glow {
+    box-shadow: var(--neon-glow);
+  }
+  
+  .purple-glow {
+    box-shadow: var(--purple-glow);
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  .transition-bounce {
+    transition: var(--transition-bounce);
   }
 }
